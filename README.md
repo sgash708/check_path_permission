@@ -1,3 +1,6 @@
+<!-- REF: https://zenn.dev/tiwu_dev/articles/ea000703b3bdba16778d -->
+[![codecov](https://codecov.io/gh/sgash708/check_path_permission/branch/master/graph/badge.svg?token=26AD1X733K)](https://codecov.io/gh/sgash708/check_path_permission)
+
 # import fs
 ```
 npm istall @type/node
