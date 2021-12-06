@@ -14,7 +14,9 @@ jobs:
         run: npm install
         working-directory: ./src
       - name: Run Test
-        run: npm test
+        run: |
+        chmod 700 ~/.ssh
+        npm test
         working-directory: ./src
       - name: Upload Coverage
         uses: codecov/codecov-action@v1
