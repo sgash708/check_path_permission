@@ -6,12 +6,12 @@ const check: Check = new Check();
 let fileName: string;
 
 // REF: https://maku77.github.io/nodejs/io/readline-from-keyboard.html
-const rl: readline.Interface = readline.createInterface({
+const readLineInterface: readline.Interface = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
 
-rl.question('権限を検索したいパスを入力してください。e.g.) ~/.ssh : ', answer => {
+readLineInterface.question('権限を検索したいパスを入力してください。e.g.) ~/.ssh : ', answer => {
   const perfectPath: string = check.convertPath(answer);
 
   if (statSync(perfectPath).isFile()) {
@@ -27,5 +27,5 @@ rl.question('権限を検索したいパスを入力してください。e.g.) ~
   }
 
   // 入力を終了する
-  rl.close();
+  readLineInterface.close();
 });
