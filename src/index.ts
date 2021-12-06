@@ -1,5 +1,4 @@
 import * as readline from 'readline';
-import { homedir } from 'os';
 import { Check } from './check';
 import { readdirSync, statSync } from 'fs';
 
@@ -13,7 +12,7 @@ const rl: readline.Interface = readline.createInterface({
 });
 
 rl.question('権限を検索したいパスを入力してください。e.g.) ~/.ssh : ', answer => {
-  const perfectPath: string = answer.replace(/~\//g, `${homedir()}/`);
+  const perfectPath: string = check.convertPath(answer);
 
   if (statSync(perfectPath).isFile()) {
     // REF: https://tektektech.com/javascript-get-fileinfo-from-path/
