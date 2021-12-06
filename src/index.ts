@@ -15,9 +15,7 @@ readLineInterface.question('権限を検索したいパスを入力してくだ�
   const perfectPath: string = check.convertPath(answer);
 
   if (statSync(perfectPath).isFile()) {
-    // REF: https://tektektech.com/javascript-get-fileinfo-from-path/
-    const res: RegExpMatchArray | null = perfectPath.match(".+/(.+?)([\?#;])?$");
-    fileName = res ? res[1] : perfectPath;
+    fileName = check.pickOutFileNameFromPath(perfectPath)
     console.log(fileName, check.checkPermission(perfectPath));
   } else {
     const files: string[] = readdirSync(perfectPath);

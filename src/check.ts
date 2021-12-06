@@ -4,6 +4,7 @@ import { homedir } from 'os';
 export interface ICheck {
   checkPermission(filepath: string): string
   convertPath(input: string): string
+  pickOutFileNameFromPath(input: string): string
 }
 
 export class Check implements ICheck {
@@ -29,5 +30,19 @@ export class Check implements ICheck {
    */
   convertPath(input: string): string {
     return input.replace(/^~\//g, `${homedir()}/`);
+  }
+
+  /**
+   * pickOutFileName
+   * ファイル名をパスから取り出す。
+   * 
+   * @param input 
+   * @returns ファイル名もしくは、パスを返す
+   */
+  pickOutFileNameFromPath(path: string): string {
+    // REF: https://tektektech.com/javascript-get-fileinfo-from-path/
+    const res: RegExpMatchArray | null = path.match(".+/(.+?)([\?#;])?$");
+
+    return res ? res[1] : path;
   }
 }
