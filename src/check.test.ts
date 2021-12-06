@@ -36,3 +36,12 @@ describe('convertPath', () => {
     expect(check.convertPath(`${homedir()}/.ssh/authorized_keys`)).toBe(`${homedir()}/.ssh/authorized_keys`);
   });
 });
+
+describe('pickOutFileNameFromPath', () => {
+  it('success_including_file_without_extension', () => {
+    expect(check.pickOutFileNameFromPath(`${homedir}/.ssh/authorized_keys`)).toBe('authorized_keys');
+  });
+  it('success_including_file_with_extention', () => {
+    expect(check.pickOutFileNameFromPath(`${homedir}/.ssh/iam.pem`)).toBe('iam.pem');
+  });
+});

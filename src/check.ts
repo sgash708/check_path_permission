@@ -34,7 +34,7 @@ export class Check implements ICheck {
 
   /**
    * pickOutFileName
-   * ファイル名をパスから取り出す。
+   * ファイル名をパスから取り出す
    * 
    * @param input 
    * @returns ファイル名もしくは、パスを返す
