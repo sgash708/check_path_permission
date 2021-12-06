@@ -9,6 +9,7 @@ if (statSync(path).isFile()) {
     console.log(path, check.checkPermission(path));
 } else {
     const files: string[] = readdirSync(path);
+
     files.forEach(fileName => {
         console.log(fileName, check.checkPermission(path + fileName));
     });
