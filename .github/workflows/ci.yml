@@ -12,8 +12,10 @@ jobs:
         uses: actions/checkout@master
       - name: Install Dependencies
         run: npm install
+        working-directory: ./src
       - name: Run Test
-        run: npm run test:coverage
+        run: npm test
+        working-directory: ./src
       - name: Upload Coverage
         uses: codecov/codecov-action@v1
         with:
