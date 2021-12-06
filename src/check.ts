@@ -28,6 +28,6 @@ export class Check implements ICheck {
    * @returns 
    */
   convertPath(input: string): string {
-    return input.replace(/~\//g, `${homedir()}/`);
+    return input.replace(/^~\//g, `${homedir()}/`);
   }
 }
