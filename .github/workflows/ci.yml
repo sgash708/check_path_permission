@@ -6,6 +6,9 @@ on:
 jobs:
   test:
     name: Test
+    outputs:
+      NOTICE_SLACK: ${{ steps.notice-slack.outputs.NOTICE_SLACK }}
+
     runs-on: macos-11
     steps:
       - name: Checkout Repository
