@@ -11,6 +11,6 @@
     "strict": true,
     /* Completeness */
     "skipLibCheck": true,
-    "rootDir": "./"
+    "rootDir": "./src"
   }
 }
