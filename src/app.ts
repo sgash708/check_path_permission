@@ -1,5 +1,5 @@
 import * as readline from 'readline';
-import { Check } from './check';
+import { Check } from './component/check';
 import { readdirSync, statSync } from 'fs';
 
 const check: Check = new Check();

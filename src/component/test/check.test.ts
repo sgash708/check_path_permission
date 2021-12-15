@@ -1,5 +1,5 @@
 import { homedir } from 'os';
-import { Check } from './check';
+import { Check } from '../check';
 
 const check: Check = new Check();
 const home: string = homedir();
