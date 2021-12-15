@@ -11,7 +11,7 @@ jobs:
 
     runs-on: macos-11
     steps:
-      - id: Notice Slack
+      - id: notice-slack
         run: echo "::set-output name=NOTICE_SLACK::true"
       - uses: actions/checkout@v2
 
