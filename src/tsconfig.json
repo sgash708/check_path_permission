@@ -12,8 +12,5 @@
     /* Completeness */
     "skipLibCheck": true,
     "rootDir": "./src"
-  },
-  "include": [
-    "src"
-  ]
+  }
 }
